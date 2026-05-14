@@ -1,0 +1,6 @@
+# 隐藏文件全部不要上传，出了自己
+.*
+!.gitignore
+
+# build 不上传
+build
