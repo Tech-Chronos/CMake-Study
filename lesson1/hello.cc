@@ -13,9 +13,12 @@ void _QuickSort(std::vector<int>& nums, int l, int r)
     // [l ,left] [left + 1, right - 1] [right, r]
     while (cur < right)
     {
-        if (nums[cur] < pivot) std::swap(nums[++left], nums[cur++]);
-        else if (nums[cur] > pivot) std::swap(nums[--right], nums[cur]);
-        else ++cur;
+        if (nums[cur] < pivot) 
+            std::swap(nums[++left], nums[cur++]);
+        else if (nums[cur] > pivot) 
+            std::swap(nums[--right], nums[cur]);
+        else 
+            ++cur;
     }
 
     _QuickSort(nums, l, left);
