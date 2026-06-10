@@ -84,16 +84,17 @@ install(DIRECTORY include/
     FILES_MATCHING PATTERN "*.h"
 )
 
-# 7. 将导出的目标集合安装到构建树
+# 7. 将导出的目标集合安装到构建树，生成 target
 # 导出一个已经定义好的导出集
 export(EXPORT MyMathTargets
     FILE ${CMAKE_CURRENT_BINARY_DIR}/MyMathTargets.cmake
+    NAMESPACE MyMath::
 )
 
-# 8. 将导出的目标集合安装到系统树
+# 8. 将导出的目标集合安装到系统树，生成 target
 install(EXPORT MyMathTargets
     FILE MyMathTargets.cmake
-    NAMESPACE mymath::
+    NAMESPACE MyMath::
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
 )
 

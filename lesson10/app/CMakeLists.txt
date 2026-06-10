@@ -1,0 +1,15 @@
+add_executable(main main.cc)
+
+target_link_libraries(main PRIVATE MyMath)
+
+set_target_properties(
+    main PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    INSTALL_RPATH "$ORIGIN/../lib"
+)
+
+install(
+    TARGETS main
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
