@@ -47,7 +47,7 @@ add_custom_target(
         ${SRCS} ${HEADS}
 )
 
-# 将 生成的proto源文件构建成静态库
+# 将 生成的proto源文件构建成动态库
 add_library(MyProto SHARED ${SRCS})
 # 但是这个时候并没有生成 srcs，要依赖于 generate_proto 这个目标先去生成 srcs
 add_dependencies(MyProto generate_proto)
